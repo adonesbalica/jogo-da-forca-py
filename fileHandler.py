@@ -11,9 +11,9 @@ def abrir_arquivo_leitura(nome_arquivo):
     try:
         a = open(nome_arquivo, 'r')
     except:
-        print("Não foi possível abrir para leitrua.")
+        print("Não foi possível abrir para leitura.")
     else:
-        print(f'Arquivo {nome_arquivo} aberto com sucessozn')
+        print(f'Arquivo {nome_arquivo} aberto com sucesso.')
         return a
 
 def criar_arquivo(nome_arquivo):
@@ -21,11 +21,12 @@ def criar_arquivo(nome_arquivo):
         a = open(nome_arquivo, 'wt+')
         a.close()
     except:
-        print('Erro ao na criação do arquivo.')
+        print('Erro na criação do arquivo.')
     else:
         print(f'Arquivo {nome_arquivo} criado com sucesso!\n')
 
 def listar_arquivo(nome_arquivo):
+    dados = []  # Inicializar dados para evitar erros
     try:
         a = open(nome_arquivo, 'rt')
     except:
@@ -38,7 +39,7 @@ def listar_arquivo(nome_arquivo):
 
 def inserir_score(nome_arquivo, nome_jogador, score):
     try:
-        a = open(nome_arquivo)
+        a = open(nome_arquivo, 'a')  # Usar 'a' para adicionar ao arquivo
     except:
         print('Erro ao abrir o arquivo.')
     else:
